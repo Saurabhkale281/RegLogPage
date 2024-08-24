@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Code_Crafter.RegLogPage.Entity.questionEntity;
 import Code_Crafter.RegLogPage.Service.questionService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/questions")
+@Slf4j
 public class questionController {
 	
 	@Autowired
@@ -31,7 +33,9 @@ public class questionController {
     public ResponseEntity<List<questionEntity>> getQuestionsByCriteria(
         @RequestParam String technology,
         @RequestParam String proficiencyLevel) {
-        List<questionEntity> questions = questionservice.getQuestionsByTechnologyAndProficiencyLevel(technology, proficiencyLevel);
+    	log.info(proficiencyLevel);
+    	log.info(technology);
+        List<questionEntity> questions = questionservice.getQuestionsByTechnologyAndProficiencyLevel(technology, proficiencyLevel.toLowerCase());
         return ResponseEntity.ok(questions);
     }
 }
