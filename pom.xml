@@ -11,6 +11,9 @@
 	<groupId>Code_Crafter</groupId>
 	<artifactId>RegLogPage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<packaging>jar</packaging>
+	
 	<name>RegLogPage</name>
 	<description>Code crafter registration and login page</description>
 	<properties>
