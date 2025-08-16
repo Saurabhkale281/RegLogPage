@@ -18,11 +18,6 @@ public class userServiceImp{
 	@Autowired 
 	private UserRepository userrepository;
 	
-//	 @Autowired
-//	 private PasswordEncoder passwordEncoder;  // Inject the password encoder
-
-
-
 	 public addUserResponse addUser(RegisterDTO registerdto) {
 			addUserResponse response = new addUserResponse();
 			try {
